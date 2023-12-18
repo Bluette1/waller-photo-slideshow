@@ -76,13 +76,12 @@
   all: unset;
   display: block;
   position: absolute;
-  bottom: 10vh;
+  bottom: 8vh;
   right: 10vh;
   color: rgb(255, 255, 255);
   z-index: 100;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.8em;
-  font-weight: 600;
+  font-size: 1.2em;
+  font-weight: 700;
 }
 
 @media not(prefers-reduced-motion) {

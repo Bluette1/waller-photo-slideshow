@@ -10,13 +10,12 @@ type image = {
 
 type imageSliderProps = {
   images: image[],
-  city: string | null
+  data: object
 };
-export function ImageSlider({ images, city }: imageSliderProps) {
+export function ImageSlider({ images, data }: imageSliderProps) {
   const [imageIndex, setImageIndex] = useState(0);
   const delay = 5500;
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
 
   useEffect(() => {
     resetTimeout();
@@ -61,6 +60,10 @@ export function ImageSlider({ images, city }: imageSliderProps) {
     <button aria-hidden aria-label="View Previous Image" onClick={showPrevImage} className="img-slider-btn" style={{ left: 0 }}><ArrowBigLeft /></button >
     <button aria-hidden aria-label="View Next Image" onClick={showNextImage} className="img-slider-btn" style={{ right: 0 }}><ArrowBigRight /></button >
     <div id="after-image-slider-controls" />
-    {city && <article className="city">{city}</article>}
+    {data && <article className="city">
+      <p>{data.temperature}° {<img src={data.icon}/>} {data.time}</p>
+      <p>{data.city}</p>
+      <p>PicJumbo. Featured photos</p>
+      </article>}
   </section>
 }
