@@ -17,6 +17,17 @@ export function ImageSlider({ images, data }: imageSliderProps) {
   const delay = 5500;
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+
   useEffect(() => {
     resetTimeout();
     timeoutRef.current = setTimeout(showNextImage, delay);
@@ -60,10 +71,10 @@ export function ImageSlider({ images, data }: imageSliderProps) {
     <button aria-hidden aria-label="View Previous Image" onClick={showPrevImage} className="img-slider-btn" style={{ left: 0 }}><ArrowBigLeft /></button >
     <button aria-hidden aria-label="View Next Image" onClick={showNextImage} className="img-slider-btn" style={{ right: 0 }}><ArrowBigRight /></button >
     <div id="after-image-slider-controls" />
-    {data && <article className="city">
-      <p>{data.temperature}° {<img src={data.icon}/>} {data.time}</p>
+    {data && <article className="data">
+      <p>{data.temperature}° {<img src={data.icon}/>} <span>{time}</span></p>
       <p>{data.city}</p>
-      <p>PicJumbo. Featured photos</p>
+      <h>PicJumbo. Featured photos</h>
       </article>}
   </section>
 }
