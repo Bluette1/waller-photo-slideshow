@@ -1,8 +1,8 @@
 import { ImageSlider } from "./imageSlider";
-import { useQuery } from "react-query";
+import { useEffect } from "react";
+import { useQuery, useQueryClient, QueryClient } from "react-query";
 import axios from "axios";
 import './App.css'
-
 
 const retrieveImages = async () => {
   const response = await axios.get("http://localhost:3000/");
@@ -38,22 +38,27 @@ async function showCity(position) {
 
   window.localStorage.setItem('city', city)
 }
-
 function App() {
   const { data: images, error: errorImages, isLoading: isLoadingImages } = useQuery("imagesData", retrieveImages);
   const { data: weather, error: errorWeather, error: isLoadingWeather } = useQuery("weatherData", retrieveWeather);
 
+  const queryClient = new QueryClient()
+
+  useEffect(() => {
+    const weathrTimer = setInterval(() => {
+      queryClient.invalidateQueries('weatherData')
+    }, 1000 * 60 * 60);
+    return () => clearInterval(weathrTimer);
+  }, []);
 
   if (isLoadingImages || isLoadingWeather) return <div>Fetching data...</div>;
   if (errorImages || errorWeather) return <div>An error occurred.</div>;
+  const city = window.localStorage.getItem('city');
+  const { current, location } = weather
+  const { condition: { icon } } = current
+  const temperature = current.temp_c
 
-    const city = window.localStorage.getItem('city');
-
-    const { current, location } = weather
-    const { condition: { icon } } = current
-    const temperature = current.temp_c
-  
-    const data = { city, icon, temperature }
+  const data = { city, icon, temperature }
 
   return (
     <>    <div style={{ maxWidth: `${screen.width - 3 / 100 * screen.width}px`, width: "100%", aspectRatio: "10 / 5.05", margin: "0 auto" }}><ImageSlider images={images} data={data} /></div>

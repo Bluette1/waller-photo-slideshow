@@ -72,9 +72,9 @@ export function ImageSlider({ images, data }: imageSliderProps) {
     <button aria-hidden aria-label="View Next Image" onClick={showNextImage} className="img-slider-btn" style={{ right: 0 }}><ArrowBigRight /></button >
     <div id="after-image-slider-controls" />
     {data && <article className="data">
-      <p>{data.temperature}° {<img src={data.icon}/>} <span>{time}</span></p>
+      <p>{data.temperature}° {<img className="png" src={data.icon}/>} <span>{time}</span></p>
       <p>{data.city}</p>
-      <h>PicJumbo. Featured photos</h>
+      <h4>PicJumbo. Featured photos</h4>
       </article>}
   </section>
 }

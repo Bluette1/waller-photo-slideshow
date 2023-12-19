@@ -88,6 +88,10 @@
   font-size: 1.7em;
 }
 
+.data .png {
+  margin-bottom: -1em;
+}
+
 @media not(prefers-reduced-motion) {
   .img-slider-img {
     transition: translate 300ms ease-in-out;
