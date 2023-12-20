@@ -35,13 +35,12 @@
   width: 2rem;
   height: 2rem;
 }
+
 @keyframes squish {
   50% {
     scale: 1.4 0.6;
   }
 }
-
-
 
 .img-slider-btn:focus-visible {
   outline: auto;

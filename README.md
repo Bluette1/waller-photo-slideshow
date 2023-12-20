@@ -3,6 +3,8 @@
 
 ![Demo picture](./src/assets/images/screenshot.png)
 
+## Live Demo
+
 [Deployed site](https://waller-photo-slideshow.netlify.app/)
 
 This README outlines the details of collaborating on this React+Vite application.
@@ -32,5 +34,32 @@ You will need the following things properly installed on your computer.
 * `yarn build` (development)
 
 Further Resources
--[Vitejs](https://vitejs.dev/guide/)
+- [Vitejs](https://vitejs.dev/guide/)
 
+## Authors
+
+👤 **Marylene Sawyer**
+- Github: [@Bluette1](https://github.com/Bluette1)
+- Twitter: [@MaryleneSawyer](https://twitter.com/MaryleneSawyer)
+- Linkedin: [Marylene Sawyer](https://www.linkedin.com/in/marylene-sawyer)
+
+
+# Acknowledgements
+- [PicJumbo](https://picjumbo.com/)
+- [WeatherApi](https://www.weatherapi.com/)
+- [GoogleMapsApi](https://developers.google.com/maps)
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Bluette1/waller-photo-slideshow/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
