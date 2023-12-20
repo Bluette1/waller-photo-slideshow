@@ -1,6 +1,6 @@
 import { ImageSlider } from "./imageSlider";
 import { useEffect } from "react";
-import { useQuery, useQueryClient, QueryClient } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 import axios from "axios";
 import './App.css'
 
@@ -20,12 +20,12 @@ const retrieveWeather = async () => {
 };
 
 if (navigator.geolocation) {
-  !navigator.geolocation.getCurrentPosition(showCity);
+  navigator.geolocation.getCurrentPosition(showCity);
 } else {
   console.log("Geolocation is not supported by this browser.");
 }
 
-async function showCity(position) {
+async function showCity(position: { coords: { latitude: any; longitude: any; }; }) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
 
@@ -34,7 +34,7 @@ async function showCity(position) {
   const geoResponse = await fetch(urlGeo);
 
   const geoResult = await geoResponse.json();
-  const city = geoResult.results[0].address_components.find((component) =>
+  const city = geoResult.results[0].address_components.find((component: { types: string | string[]; }) =>
     component.types.includes("locality")
   ).long_name;
 
@@ -44,7 +44,7 @@ function App() {
   const { data: images, error: errorImages, isLoading: isLoadingImages } = useQuery("imagesData", retrieveImages);
   const { data: weather, error: errorWeather, error: isLoadingWeather } = useQuery("weatherData", retrieveWeather);
 
-  const queryClient = new QueryClient()
+  const queryClient = useQueryClient()
 
   useEffect(() => {
     const weathrTimer = setInterval(() => {
@@ -56,7 +56,7 @@ function App() {
   if (isLoadingImages || isLoadingWeather) return <div>Fetching data...</div>;
   if (errorImages || errorWeather) return <div>An error occurred.</div>;
   const city = window.localStorage.getItem('city');
-  const { current, location } = weather
+  const { current, } = weather
   const { condition: { icon } } = current
   const temperature = current.temp_c
 
