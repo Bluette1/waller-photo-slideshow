@@ -1,7 +1,7 @@
 # waller-photo-slideshow
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6a39abd7-87cc-4e11-8431-6ac1450e778e/deploy-status)](https://app.netlify.com/sites/comments-section-ui/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40117370-799b-40ef-9c1c-a6895247310c/deploy-status)](https://app.netlify.com/sites/waller-photo-slideshow/deploys)
 
-![Demo picture](./public/assets/images/screenshot.png)
+![Demo picture](./src/assets/images/screenshot.png)
 
 [Deployed site](https://waller-photo-slideshow.netlify.app/)
 
