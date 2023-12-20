@@ -7,10 +7,17 @@ type image = {
   alt: string;
 };
 
+type data = {
+  city: string | null;
+  icon: string;
+  temperature: string;
+
+};
+
 
 type imageSliderProps = {
   images: image[],
-  data: object
+  data: data
 };
 export function ImageSlider({ images, data }: imageSliderProps) {
   const [imageIndex, setImageIndex] = useState(0);
@@ -21,7 +28,7 @@ export function ImageSlider({ images, data }: imageSliderProps) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTime(new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
+      setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
     }, 1000);
 
     return () => clearInterval(timer);
@@ -72,9 +79,9 @@ export function ImageSlider({ images, data }: imageSliderProps) {
     <button aria-hidden aria-label="View Next Image" onClick={showNextImage} className="img-slider-btn" style={{ right: 0 }}><ArrowBigRight /></button >
     <div id="after-image-slider-controls" />
     {data && <article className="data">
-      <p>{data.temperature}° {<img className="png" src={data.icon}/>} <span>{time}</span></p>
+      <p>{data.temperature}° {<img className="png" src={data.icon} />} <span>{time}</span></p>
       <p>{data.city}</p>
       <h4>PicJumbo. Featured photos</h4>
-      </article>}
+    </article>}
   </section>
 }
