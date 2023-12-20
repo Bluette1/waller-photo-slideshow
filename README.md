@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# waller-photo-slideshow
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6a39abd7-87cc-4e11-8431-6ac1450e778e/deploy-status)](https://app.netlify.com/sites/comments-section-ui/deploys)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Demo picture](./public/assets/images/screenshot.png)
 
-Currently, two official plugins are available:
+[Deployed site](https://waller-photo-slideshow.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This README outlines the details of collaborating on this React+Vite application.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+You will need the following things properly installed on your computer.
 
-- Configure the top-level `parserOptions` property like this:
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with yarn)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Installation
+
+* `git clone <repository-url>` this repository
+* `cd waller-photo-slideshow`
+* `yarn install`
+
+## Running / Development
+
+* `yarn dev`
+* Visit your app at [http://localhost:5713](http://localhost:5713).
+
+
+### Building
+
+* `yarn build` (development)
+
+Further Resources
+-[Vitejs](https://vitejs.dev/guide/)
+
