@@ -15,7 +15,7 @@ const retrieveImages = async () => {
 
 const retrieveWeather = async () => {
   const city = window.localStorage.getItem('city');
-  const response = await axios.get(`http://api.weatherapi.com/v1/current.json?q=${city}&key=${weatherApiKey}`);
+  const response = await axios.get(`https://api.weatherapi.com/v1/current.json?q=${city}&key=${weatherApiKey}`);
   return response.data;
 };
 
