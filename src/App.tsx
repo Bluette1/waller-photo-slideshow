@@ -4,14 +4,18 @@ import { useQuery, useQueryClient, QueryClient } from "react-query";
 import axios from "axios";
 import './App.css'
 
+import { httpProtocol, host, port, weatherApiKey, googleMapsApiKey } from './env.variables';
+
+const API_URL = `${httpProtocol}://${host}:${port}`;
+
 const retrieveImages = async () => {
-  const response = await axios.get("http://localhost:3000/");
+  const response = await axios.get(API_URL);
   return response.data;
 };
 
 const retrieveWeather = async () => {
   const city = window.localStorage.getItem('city');
-  const response = await axios.get(`http://api.weatherapi.com/v1/current.json?q=${city}&key=a72bb3cc1abb41ec910124811231812`);
+  const response = await axios.get(`http://api.weatherapi.com/v1/current.json?q=${city}&key=${weatherApiKey}`);
   return response.data;
 };
 
@@ -25,9 +29,7 @@ async function showCity(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
 
-  const urlGeo = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyBhIekNKQB-blGKBY2csHf5dUcm9mgtH50`;
-
-  const urlWeather = `http://api.weatherapi.com/v1/current.json?q=${latitude},${longitude}&key=a72bb3cc1abb41ec910124811231812`
+  const urlGeo = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${googleMapsApiKey}`;
 
   const geoResponse = await fetch(urlGeo);
 
