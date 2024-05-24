@@ -1,13 +1,15 @@
 # waller-photo-slideshow
 [![Netlify Status](https://api.netlify.com/api/v1/badges/40117370-799b-40ef-9c1c-a6895247310c/deploy-status)](https://app.netlify.com/sites/waller-photo-slideshow/deploys)
 
+
+This is a photo slideshow built using TypeScript, React Vite, and CSS.
+
 ![Demo picture](./src/assets/images/screenshot.png)
 
 ## Live Demo
 
 [Deployed site](https://waller-photo-slideshow.netlify.app/)
 
-This README outlines the details of collaborating on this React+Vite application.
 
 ## Prerequisites
 
