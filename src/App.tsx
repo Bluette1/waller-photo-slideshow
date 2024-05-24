@@ -63,7 +63,7 @@ function App() {
   const data = { city, icon, temperature }
 
   return (
-    <section className="container-section">    <div style={{ maxWidth: `${screen.width - 3 / 100 * screen.width}px`, width: "100%", aspectRatio: "10 / 5.05", margin: "0 auto" }}><ImageSlider images={images} data={data} /></div>
+    <section className="container-section">    <div className="inside-container" style={{ maxWidth: `${screen.width - 3 / 100 * screen.width}px`, width: "100%" }}><ImageSlider images={images} data={data} /></div>
     </section>
   )
 }

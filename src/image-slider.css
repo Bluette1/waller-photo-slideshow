@@ -91,6 +91,11 @@
   margin-bottom: -1em;
 }
 
+.inside-container {
+  aspect-ratio: 10 / 5.05;
+  margin: 0 auto;
+}
+
 @media not(prefers-reduced-motion) {
   .img-slider-img {
     transition: translate 300ms ease-in-out;
@@ -99,5 +104,11 @@
   .img-slider-btn:hover > *,
   .img-slider-btn:focus-visible > * {
     animation: squish 200ms ease-in-out;
+  }
+}
+
+@media (max-width: 500px) {
+  .inside-container {
+    aspect-ratio: unset;
   }
 }
