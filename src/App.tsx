@@ -15,7 +15,6 @@ const retrieveImages = async () => {
 
 const retrieveWeather = async () => {
   const city = window.localStorage.getItem('city');
-  console.log('City--------------', city)
   const response = await axios.get(`https://api.weatherapi.com/v1/current.json?q=${city}&key=${weatherApiKey}`);
   return response.data;
 };
@@ -32,7 +31,6 @@ async function showCity(position: { coords: { latitude: any; longitude: any; }; 
 
   const urlGeo = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${googleMapsApiKey}`;
 
-  console.log('${latitude},${longitude}', `${latitude},${longitude}`)
   const geoResponse = await fetch(urlGeo);
 
   const geoResult = await geoResponse.json();
@@ -61,13 +59,12 @@ function App() {
   const { current, } = weather
   const { condition: { icon } } = current
   const temperature = current.temp_c
-  console.log('temp: +++++++++++++++++++++++++', temperature)
 
   const data = { city, icon, temperature }
 
   return (
-    <>    <div style={{ maxWidth: `${screen.width - 3 / 100 * screen.width}px`, width: "100%", aspectRatio: "10 / 5.05", margin: "0 auto" }}><ImageSlider images={images} data={data} /></div>
-    </>
+    <section className="container-section">    <div style={{ maxWidth: `${screen.width - 3 / 100 * screen.width}px`, width: "100%", aspectRatio: "10 / 5.05", margin: "0 auto" }}><ImageSlider images={images} data={data} /></div>
+    </section>
   )
 }
 
