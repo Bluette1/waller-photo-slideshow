@@ -2,7 +2,12 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/40117370-799b-40ef-9c1c-a6895247310c/deploy-status)](https://app.netlify.com/sites/waller-photo-slideshow/deploys)
 
 
-This is a photo slideshow built using TypeScript, React Vite, and CSS.
+This is a photo slideshow built using TypeScript, React Vite, and CSS on the frontend with Ruby on Rails, SideKiq, and Redis on the backend.
+
+Backend: https://github.com/Bluette1/web-images-scraper-api
+
+Inspired by [Google Photo Slides](https://chromewebstore.google.com/detail/google-featured-photos-sl/pepbogfgohpfngkncedakaegddjneapm)
+
 
 ![Demo picture](./src/assets/images/screenshot.png)
 
